@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Len_TECH | Professional Ecosystem</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="overlay" id="overlay" onclick="closeCart()"></div>
+
+    <nav>
+        <div class="logo-area">
+            <div class="logo" onclick="window.scrollTo(0,0)">LEN_TECH</div>
+            <div class="nav-copyright">© 2026 LEN Project</div>
+        </div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="cart-trigger" onclick="openCart()">
+            🛒 <span class="cart-count" id="cart-count">0</span>
+        </div>
+    </nav>
+
+    <div class="sticky-footer">
+        © 2026 Len_TECH Systems Ecosystem | St. Matthew College Research Project
+    </div>
+
+    <div id="cart-panel">
+        <span class="close-cart" onclick="closeCart()">×</span>
+        <h2 style="margin-bottom: 10px; font-size: 2rem;">Setup Tray</h2>
+        <p style="color: #555; margin-bottom: 30px; font-size: 0.9rem;">Your selected high-performance parts.</p>
+        <div id="cart-list" style="margin-bottom: 30px; height: 55vh; overflow-y: auto; padding-right: 10px;">
+            <p style="color:#444; text-align: center; margin-top: 40px;">Tray is empty.</p>
+        </div>
+        <div style="border-top: 2px solid var(--glass); padding-top: 25px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px;">
+                <span style="color: #888;">Total Investment</span>
+                <h2 id="cart-total" style="color: var(--primary); font-weight: 800;">₱0</h2>
+            </div>
+            <button class="btn" style="width: 100%;" onclick="alert('Order Sent to Processing!')">Initialize Checkout</button>
+        </div>
+    </div>
+
+    <section id="home">
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 60px; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 300px;">
+                <h1 style="font-size: 5rem; font-weight: 800; line-height: 1; letter-spacing: -2px;">Ultimate <br><span style="color: var(--primary);">Performance</span></h1>
+                <p style="color: #888; margin: 30px 0; font-size: 1.1rem; max-width: 500px;">Experience precision engineering. Custom PC builds and premium components sourced for St. Matthew College enthusiasts.</p>
+                <div style="display: flex; gap: 15px;">
+                    <a href="#gallery" class="btn" style="text-decoration:none; display:inline-block;">Explore Hardware</a>
+                    <a href="#about" class="btn" style="background: var(--glass); border: 1px solid var(--glass); text-decoration:none; display:inline-block;">Learn More</a>
+                </div>
+            </div>
+            <div style="flex: 1; display: flex; justify-content: center;">
+                <img src="mainlogo (2).png" style="max-width: 500px; width: 100%; border-radius: 40px; border: 1px solid var(--glass); box-shadow: 0 30px 60px rgba(0,0,0,0.5);">
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <h1 style="font-size: 3.5rem; font-weight: 800;">Hardware <span style="color: var(--primary);">Lab</span></h1>
+        <p style="color: #666;">Select individual components for your build.</p>
+
+        <div class="grid">
+            <div class="card">
+                <img src="Len_tech core9.jpg" alt="CPU">
+                <div class="card-content">
+                    <h3>Core i9 Engine</h3>
+                    <p>The primary control centre, facilitating high-speed communication between all hardware components.</p>
+                    <a href="https://www.intel.com/content/www/us/en/products/sku/236773/intel-core-i9-processor-14900k-36m-cache-up-to-6-00-ghz/specifications.html" target="_blank" class="more-info-link">Technical Specs →</a>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto;">
+                        <h2 style="color: var(--primary);">₱34,500</h2>
+                        <button class="btn" onclick="addToCart('CPU Core i9', 34500)">Add</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <img src="mb.png" alt="Motherboard">
+                <div class="card-content">
+                    <h3>Z790 Motherboard</h3>
+                    <p>The central electrical circuit connecting different parts and distributing power efficiently.</p>
+                    <a href="https://rog.asus.com/motherboards/rog-maximus/rog-maximus-z790-hero-model/spec/" target="_blank" class="more-info-link">Board Layout →</a>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto;">
+                        <h2 style="color: var(--primary);">₱18,900</h2>
+                        <button class="btn" onclick="addToCart('Pro Motherboard', 18900)">Add</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <img src="pic2.jpg.crdownload.jpg" alt="RAM">
+                <div class="card-content">
+                    <h3>64GB DDR5 RAM</h3>
+                    <p>High-speed memory that houses temporary data to keep heavy applications working optimally.</p>
+                    <a href="https://www.corsair.com/us/en/p/memory/cmt64gx5m2b6400c32/dominator-platinum-rgb-64gb-2x32gb-ddr5-dram-6400mt-s-cl32-memory-kit-black-cmt64gx5m2b6400c32#tab-techspecs" target="_blank" class="more-info-link">Speed Metrics →</a>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto;">
+                        <h2 style="color: var(--primary);">₱8,800</h2>
+                        <button class="btn" onclick="addToCart('32GB RAM', 8800)">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; flex-wrap: wrap;">
+            <div>
+                <h1 style="font-size: 3.5rem; margin-bottom: 20px;">About <span style="color: var(--primary);">Len_TECH</span></h1>
+                <p style="line-height: 1.8; color: #aaa; margin-bottom: 25px;">Founded at St. Matthew College, Len_TECH was born from a passion for performance. We believe that hardware should never be a bottleneck for creativity.</p>
+                <div style="background: var(--glass); padding: 30px; border-radius: 20px; border: 1px solid var(--glass);">
+                    <h4 style="color: var(--primary); margin-bottom: 10px;">Why choose us?</h4>
+                    <p style="font-size: 0.9rem; color: #888;">Every component is rigorously benchmarked. We don't just sell parts; we engineer ecosystems designed for longevity and speed.</p>
+                </div>
+            </div>
+            <div style="border-radius: 30px; overflow: hidden; border: 1px solid var(--glass);">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.32432168925!2d121.1192735!3d14.694297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397bbb627d377bb%3A0xc3f8329b19e9f90f!2sSt.%20Matthew%20College!5e0!3m2!1sen!2sph!4v1714567890123!5m2!1sen!2sph" width="100%" height="450" style="border:0; filter: invert(90%) hue-rotate(180deg);"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" style="border-bottom: none;">
+        <center>
+            <h1 style="font-size: 4rem; margin-bottom: 10px;">Contact <span style="color: var(--primary);">Support</span></h1>
+            <p style="color: #666; margin-bottom: 50px;">Send a transmission regarding your custom requirements.</p>
+            <div style="max-width: 600px; background: var(--card-bg); padding: 40px; border-radius: 30px; border: 1px solid var(--glass); text-align: left;">
+                <div style="margin-bottom: 20px;">
+                    <label style="font-size: 0.8rem; color: #666; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 10px;">Email Address</label>
+                    <input type="text" placeholder="name@email.com" style="width:100%; padding:18px; background:var(--glass); border:1px solid var(--glass); color:white; border-radius:15px; outline: none;">
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <label style="font-size: 0.8rem; color: #666; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 10px;">Message</label>
+                    <textarea rows="5" placeholder="Specify your hardware requirements..." style="width:100%; padding:18px; background:var(--glass); border:1px solid var(--glass); color:white; border-radius:15px; outline: none;"></textarea>
+                </div>
+                <button class="btn" style="width: 100%;">Send Transmission</button>
+            </div>
+        </center>
+    </section>
+    <script src="script.js"></script>
+
+</body>
+</html>
